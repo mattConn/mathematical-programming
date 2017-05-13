@@ -1,5 +1,6 @@
 (* ::Package:: *)
 
+(* ::Code:: *)
 Manipulate[
 	{
 		(*Plot[a*x^2+b*x+c,{x,-10,10},(*plot standard form*)*)
@@ -30,7 +31,8 @@ Manipulate[
 			FontSize->24] *)
 		],(*end plot*)
 		{ (*display roots, vertex, y-intercept*)
-			StringForm["\n roots: (``,0), (``,0) \n vertex: (``,``) \n y-intercept: (0,``) \n \n  \t\t\t\tmirrored: \n roots: (``,0), (``,0) \n vertex: (``,``) \n y-intercept: (0,``)",
+			StringForm["\n 1:\n roots: (``,0), (``,0) \n vertex: (``,``) \n y-intercept: (0,``) \n \n 
+2:\n roots: (``,0), (``,0) \n vertex: (``,``) \n y-intercept: (0,``)",
 				firstRoot=(-1*b-Sqrt[b^2-4*a*c])/2*a,
 				secondRoot=(-1*b+Sqrt[b^2-4*a*c])/2*a,
 				vertexXCoord=(firstRoot+secondRoot)/2,

@@ -1,7 +1,6 @@
 (* ::Package:: *)
 
 f[x_,a_,b_,c_]:=a*x^2+b*x+c (*quadratic standard form*)
-f[x_,a_,b_,c_]:=a*x^2+b*x+c
 root[plusOrMinus_,a_,b_,c_]:=(-b+plusOrMinus*Sqrt[b^2-4*a*c])/2*a (*quadratic formula*)
 vertex[firstRoot_,secondRoot_]:=(firstRoot+secondRoot)/2
 

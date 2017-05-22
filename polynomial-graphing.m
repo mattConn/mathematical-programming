@@ -31,13 +31,13 @@ Manipulate[
 				firstRoot=root[-1,a,b,c],
 				secondRoot=root[1,a,b,c],
 				vertex[firstRoot,secondRoot],
-				f[vertex[firstRoot,secondRoot],a,b,c],
+				f[vertex[firstRoot,secondRoot],degree,a,b,c],
 				c,
 
 				firstRoot2=root[-1,a2,b2,c2],
 				secondRoot2=root[1,a2,b2,c2],
 				vertex[firstRoot2,secondRoot2],
-				f[vertex[firstRoot2,secondRoot2],a2,b2,c2],
+				f[vertex[firstRoot2,secondRoot2],degree,a2,b2,c2],
 				c
 			]
 		}(*end display group*)

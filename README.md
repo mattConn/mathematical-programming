@@ -8,4 +8,4 @@ C++ programs
 Jupyter notebooks  
 
 ## mathematica  
-Mathematica scripts  
+Mathematica scripts (ported over to Jupyter) 

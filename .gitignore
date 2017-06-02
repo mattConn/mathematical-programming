@@ -1,3 +1,9 @@
+# ignore c++ out files
 *.o
 bin/*
+
+# ignore qt creator build folders
+build-*
+
+# ignore jupyter notebook swap files
 .ipynb_checkpoints/

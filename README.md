@@ -5,7 +5,10 @@ Math-oriented programming projects.
 C++ programs  
 
 ## jupyter  
-Jupyter notebooks  
+Jupyter notebooks (python)
 
 ## mathematica  
 Mathematica scripts (ported over to Jupyter) 
+
+## sagemath
+Sage Math scripts (python)

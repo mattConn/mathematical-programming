@@ -1,8 +1,9 @@
 COMPILER = 'clang++-3.9'
 FLAGS = '-std=c++11'
+BINCHECK = if [ ! -d bin ]; then mkdir bin; fi;
 
-*.o: *.cpp
-	for f in *.cpp; do $(COMPILER) $(FLAGS) $$f -o $$f.o; done;
+bin/*: *.cpp
+	$(BINCHECK) for f in *.cpp; do $(COMPILER) $(FLAGS) $$f -o bin/$$f.o; done;
 
 clean:
-	rm *.o
+	rm -rf bin

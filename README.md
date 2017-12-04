@@ -1,14 +1,8 @@
-# Mathematical Programming 
+# Programming for Math 
 Math-oriented programming projects. 
 
-## cpp  
-C++ programs  
+## bin
+Compiled C++ binaries; run `make clean` and then `make` to recompile. See makefile to edit compiler and flags.
 
-## jupyter  
-Jupyter notebooks (python)
-
-## mathematica  
-Mathematica scripts (ported over to Jupyter) 
-
-## sagemath
-Sage Math scripts (python)
+## notebooks
+Notebooks to be opened by Sage (`.py`) or Mathematica (`.m`).

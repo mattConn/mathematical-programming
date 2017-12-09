@@ -2,7 +2,7 @@
 import os
 import math
 
-MAX = 10**7
+MAX = 10**6
 
 pi = 4.0
 divisor = 1
@@ -17,7 +17,4 @@ for i in range(1,MAX+1):
 	else:
 		signStr = "+"
 
-	#os.system("clear")
-
-	print "Operations: " + str(i)
 	print "4 " + signStr + " (4/" + str(divisor)  + ") = " + str(pi)

@@ -1,4 +1,4 @@
-# Programming for Math 
+# Mathematics Programming
 Math-oriented programming projects. 
 
 ## bin

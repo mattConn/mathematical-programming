@@ -1,6 +1,4 @@
 # pi = 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - ...)
-import os
-import math
 
 MAX = 10**6
 

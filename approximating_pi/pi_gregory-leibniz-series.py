@@ -2,9 +2,13 @@
 
 MAX = 10**6
 
+# for writing data to file
+#file = open("gregory-leibnitz-series_10^6","w")
+
 pi = 4.0
 divisor = 1
 sign = 1
+
 for i in range(1,MAX+1):
 	sign *= -1
 	divisor += 2
@@ -16,3 +20,6 @@ for i in range(1,MAX+1):
 		signStr = "+"
 
 	print "4 " + signStr + " (4/" + str(divisor)  + ") = " + str(pi)
+	#file.write(str(pi)+"\n")
+
+#file.close()

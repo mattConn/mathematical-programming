@@ -3,7 +3,7 @@
 MAX = 10**6
 
 # for writing data to file
-#file = open("gregory-leibnitz-series_10^6","w")
+#file = open("gregory-leibniz-series_10^6.txt","w")
 
 pi = 4.0
 divisor = 1

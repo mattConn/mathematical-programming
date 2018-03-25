@@ -1,21 +1,34 @@
+/*
+Gregory-Leibniz series for approximating Pi
+===========================================
+
+     4   4   4   4   4
+pi = - - - + - - - + -  . . .
+     1   3   5   7   9
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
+
+// 20 digits of pi (rounded up)
+#define PI 3.1415926535897932385
 
 #define MAX_ITER 1.0E9
 
 int main(int argc, char *argv[])
 {
-	double pi = argc < 2 ? 0 : atof(argv[1]);
-	const double START_PI = pi;
+	double my_pi = argc < 2 ? 0 : atof(argv[1]); // initial value of pi; default to 0 if no argument in argv
 		
 	int sign = -1;
-	for(int i = 0, j = 1; i <= MAX_ITER, j <= MAX_ITER*2; i++, j += 2)
+	int divisor = 1;
+	for(int i = 0; i <= MAX_ITER; i++)
 	{
-		pi += (sign *= -1) * (4.0/j);
-		//printf("%.20f\n", pi);
+		my_pi += (sign *= -1) * (4.0/divisor);
+		divisor += 2;
 	}
 
-	printf("[start: %0.20f, MAX_ITER: %.0f]\n%0.20f\n", START_PI, MAX_ITER, pi);
+	printf("%.19f Calculated\n%.19f Actual\n", my_pi, PI) ;
 
 	return 0;
 }

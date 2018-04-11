@@ -11,13 +11,17 @@ pi = - - - + - - - + -  . . .
 #include <stdio.h>
 #include <stdlib.h>
 
-//#define MAX 1.0E9
-
 int main(int argc, char *argv[])
 {
+	/* for writing approximations to file
+	FILE *fp;
+	fp = fopen("./1E9_iterations.txt", "w+");
+	*/
+
 	const char PI[] = "3.1415926535897932385";
 	double my_pi = 4.0; // initial value of pi
-	int MAX = argc < 2 ? 1E6 : atoi(argv[1]); // max iterations; default to 1E6 if no argv
+
+	int MAX = argc < 2 ? 1E6 : atoi(argv[1]); // max iterations; default to 1E6 if program not called with number argument
 
 	int sign = 1;
 	int divisor = 1;
@@ -27,8 +31,13 @@ int main(int argc, char *argv[])
 		divisor += 2;
 		my_pi += (sign *= -1) * (4.0/divisor);
 		counter++;
-		//printf("%.19f\n",my_pi);
+		/*
+		fprintf(fp,"%.19f\n",my_pi);
+		*/
 	}
+	/*
+	fclose(fp);
+	*/
 
 	printf("\n%d Iterations\n%d/%d Last addition\n%.19f Calculated\n%s Actual\n\n", counter, (sign*4), divisor, my_pi, PI) ;
 

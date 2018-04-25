@@ -15,7 +15,7 @@ The offset here is 4 (original pattern has been shifted over 4 places).
 
 master = string(1/7)
 
-println("quotient, offset from 1/7, offset from last quotient:")
+println("quotient, decimal, and offset from 1/7:")
 
 last = '\0'
 for i in 1:100

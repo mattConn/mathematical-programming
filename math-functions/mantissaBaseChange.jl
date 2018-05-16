@@ -1,4 +1,4 @@
-# decimal mantissa to hexadecimal
+# decimal mantissa to new base
 function mantissaBaseChange(n,base)
 	# a = Array{Int64}(0) # force casting of floats
 	a = []
@@ -24,6 +24,3 @@ function mantissaBaseChange(n,base)
 
 	println(join(a))
 end
-
-# test call
-mantissaBaseChange(3.14159265358979323,16)

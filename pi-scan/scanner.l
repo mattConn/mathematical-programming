@@ -1,26 +1,13 @@
-/*===============================================
-To compile, fist run flex:
-	flex scanner.l
-This will generate lex.yy.c
-(scanner.l will be this file you're reading now)
-
-Then compile the newly generated c file:
-	<compiler> lex.yy.c -lfl -o scanner.out
-"-lfl" will link the appropriate libraries.
-
-scanner.out will be the compiled binary.
-===============================================*/
 %option noyywrap
 %{
-// %option noyywrap: when compiling, eliminates need for -lfl flag
 
-// declarations and inclusions
-// inserted directly into generated c file 
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 
-bool b = false; // byte (2 digits)
+bool b = 0; // byte (2 digits)
+long h = 0; // converted char storage
+int ccount = 0; // tmp char count for testing when to print newline
 
 %}
 
@@ -29,10 +16,24 @@ bool b = false; // byte (2 digits)
 \n {}
 
 . {
+
 	if(b)
 	{
 		//printf("%s : %c\n", yytext-1, (int) strtol(yytext-1,NULL,16) );
-		printf("%c", (int) strtol(yytext-1,NULL,16) );
+		h = (int) strtol(yytext-1,NULL,16);
+		if( (h > 0x40 && h < 0x5B) || (h > 0x60 && h < 0x7A) ) // print only characters
+		{
+			ccount++;
+
+			printf("%c", h);
+
+			if(ccount == 10)
+			{
+				printf("\n");
+				ccount = 0; // reset to prevent overflow
+			}
+		}
+
 		b = false;
 	}
 	else
@@ -43,13 +44,14 @@ bool b = false; // byte (2 digits)
 
 int main(int argc, char *argv[])
 {
-	// main function
-	// inserted directly into generated c file 
-
     FILE *file;
     file = fopen(argv[1], "r");
 
+	if(argc == 3)
+		fseek(file, atoi(argv[2]), SEEK_SET);
+
     yyset_in(file);
     yylex();
+	printf("\n");
     fclose(file);
 }

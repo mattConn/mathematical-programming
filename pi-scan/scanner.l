@@ -22,9 +22,6 @@ scanner.out will be the compiled binary.
 
 bool b = false; // byte (2 digits)
 
-int dn = 1; // digit number, for checking for starting digit (in main)
-int sd = 2; // digit to start scanning from (defined in main)
-
 %}
 
 %%
@@ -32,21 +29,14 @@ int sd = 2; // digit to start scanning from (defined in main)
 \n {}
 
 . {
-	if(dn != sd)
-		dn++;
-	else
+	if(b)
 	{
-
-		printf("%d", sd);
-		if(b)
-		{
-			printf("%s : %c\n", yytext-1, (int) strtol(yytext-1,NULL,16) );
-			//printf("%s\n", yytext-1);
-			b = false;
-		}
-		else
-			b = true;
+		//printf("%s : %c\n", yytext-1, (int) strtol(yytext-1,NULL,16) );
+		printf("%c", (int) strtol(yytext-1,NULL,16) );
+		b = false;
 	}
+	else
+		b = true;
 }
 
 %%

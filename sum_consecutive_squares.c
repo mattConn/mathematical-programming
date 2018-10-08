@@ -12,9 +12,11 @@ int main()
 
 		if(log10(i) == j)
 		{
-			printf("10^%d : %llu\n",j,s);
+			printf("%llu <10^%d>\n",s,j);
 			j++;
 		}
+		else
+			printf("%llu\n",s);
 	}
 
 	return 0;

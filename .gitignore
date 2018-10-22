@@ -3,3 +3,8 @@
 ignore.*
 bin
 *.out
+
+# LaTex
+*.aux
+*.log
+*.synctex.gz

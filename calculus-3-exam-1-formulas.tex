@@ -1,0 +1,118 @@
+\title{Calculus 3, Exam 1 Formulas}
+
+
+
+\documentclass[12pt]{article}
+
+\usepackage[top=.5in, bottom=.75in, left=1in, right=1in]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+
+\begin{document}
+\maketitle
+
+\section*{Vector Operations/Identities}
+\noindent
+$
+v \cdot w = ||v|| \ ||w|| \ cos\theta
+$\\\\
+$
+v \cdot v = ||v||^2
+$\\\\
+\noindent
+$
+v \perp w \Leftrightarrow v \cdot w = 0
+$\\\\
+\underline{Unit vector:}\\\\
+$
+e_u = \frac{u}{||u||}
+$\\\\
+\underline{Projection of $u$ along $v$:}\\\\
+$
+u_{||v} = \left(\frac{u\cdot v}{v \cdot v}\right) v = \left(\frac{u\cdot v}{||v||^2}\right)v = \left(\frac{u\cdot v}{||v||}\right)e_v
+$\\\\
+\underline{Component of $u$ along $v$:}\\\\
+$
+\frac{u \cdot v}{||v||} = ||u|| \ cos\theta
+$\\\\	
+\noindent
+\underline{$u$ perpendicular to $v$:}\\\\
+$
+u_{\perp v} = u - u_{||v}
+$\\\\
+\underline{Decomposition of vector $u$ with respect to $v$ (derived from above):}\\\\
+$
+u = u_{\perp v} + u_{||v}
+$\\\\
+\clearpage
+
+\section*{Cross Product}
+\noindent
+\underline{Cross product of $v$ and $w$:}\\\\
+$
+v \times w = \begin{pmatrix}  i&j&k\\v_1&v_2&v_3\\w_1&w_2&w_3\end{pmatrix}
+=  \begin{pmatrix}  v_2&v_3\\w_2&w_3 \end{pmatrix}i
+-\begin{pmatrix}  v_1&v_3\\w_1&w_3 \end{pmatrix}j
++\begin{pmatrix}  v_1&v_2\\w_1&w_2 \end{pmatrix}k
+$\\
+\indent
+(Example for row $i$):
+$\begin{pmatrix}  v_2&v_3\\w_2&w_3 \end{pmatrix}i  \ . . .  \ = (v_2w_3 - v_3w_2)i  \ . . .$\\\\
+
+
+\noindent
+\underline{About cross product:}\\\\
+$(v \times w) \perp v$ and $(v \times w) \perp w$\\\\
+$||v \times w|| = ||v|| \ ||w|| \ sin \theta$\\\\
+Area of parallelogram spanned by $v$ and $w$ = $||v \times w||$\\\\
+
+\section*{Lines and Planes in Space}
+\noindent
+\underline{Equation of a line:}\\\\
+A line through $p_0 = (x_0,y_0,z_0)$ in the direction of $v = <a,b,c>$ is described as:\\\\
+\indent$
+r(t) = r_0 + t \ v \ =  \ <x_0,y_0,z_0> + \ t <a,b,c>\\
+$\\
+where $r_0 = \overline{Op_0}$ (a vector from $O$ the origin to $p_0$), and $t$ is independent.\\\\
+\indent
+\underline{Parametric equations for line (derived from above):}\\
+\indent$x(t) = x_0 + at$\\
+\indent $y(t) = y_0 + bt$ \\
+\indent $z(t) = z_0 + ct$\\
+
+\noindent
+\underline{Equation of a plane:}\\\\
+\underline{Vector form:}\\
+$n \cdot <x,y,z> \ = \ d$\\
+
+\noindent
+\underline{Scalar form:}\\
+$a(x-x_0) + b(y-y_0) + c(z-z_0) \ = \ 0$\\
+\indent or\\
+$ax+by+cz = d$\\
+\indent where\\
+$d = ax_0 + by_0 + cz_0$
+
+\clearpage
+
+\section*{Other}
+\noindent
+\underline{Arc length:}\\\\
+$
+s(t) = \int_0^T ||r'(t)|| \ dt
+$\\\\
+\noindent
+\underline{Speed:}\\\\
+$
+\frac{d}{dt}s(t) = ||r'(t)||
+$\\\\
+\underline{Tangent plane:}\\\\
+For $z = f(x,y)$:\\
+\indent
+tangent plane at $(x_0,y_0)$: $f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$\\
+\\\\
+\end{document}
+This is never printed

@@ -37,11 +37,102 @@ $$
 $$
 
 \noindent
-\underline{The Gradient:}\\\\
+\underline{Gradient:}\\\\
 Given $f(x,y)$, the gradient of $f$ is\\
 $$
 \nabla f = \left(\frac{\partial{f}}{\partial{x}},\frac{\partial{f}}{\partial{y}}\right)
 $$
+
+\noindent
+\underline{Directional Derivative:}\\\\
+In two variables for $f(x,y)$ in the direction of unit vector $\vec{u}=<a,b>$:\\
+$$
+{D_{\vec u}}f\left( {x,y} \right) = {f_x}\left( {x,y} \right)a + {f_y}\left( {x,y} \right)b
+$$
+
+In three variables for $f(x,y,z)$ in the direction of unit vector $\vec{u}=<a,b,c>$:\\
+$$
+{D_{\vec u}}f\left( {x,y,z} \right) = {f_x}\left( {x,y,z} \right)a + {f_y}\left( {x,y,z} \right)b + {f_z}\left( {x,y,z} \right)c
+$$
+\\
+\emph{or} in a simpler form:\\
+Given $f(x,y)$, the directional derivative of $f$ at $p = (a,b)$ in the direction of unit vector $\vec{u}$ is
+
+$$
+{D_{\vec u}}f\left( {p} \right) = {D_{\vec u}}f\left( {a,b} \right) = \nabla f(a,b) \cdot \vec{u}
+$$
+
+Rate of change of a function $f$ in the direction of $\nabla f(p)$:\\
+$$
+||\nabla f(p)||
+$$
+
+Rate of change of a function $f$ in the direction of a unit vector $\vec{u}$ making an angle $\theta$ with $\nabla f(p)$:\\
+$$
+\nabla f(p) \cdot \vec{u} = ||\nabla f(p)|| \ ||\vec{u}|| \ \cos \theta
+$$
+(This comes from the following identity):
+$$
+\vec{u} \cdot \vec{v} = ||u|| \ ||v|| \ \cos \theta
+$$
+
+\section*{Optimization}
+\underline{Critical points}\\
+A point $p = (a,b)$ in the domain of $f$ is a \emph{critical point} if:\\\\
+$f_x(a,b) = 0$ or $f_x(a,b)$ does not exist, and\\
+$f_y(a,b) = 0$ or $f_y(a,b)$ does not exist.\\
+
+Solving the system of $f_x = 0$, $f_y = 0$ will find the critical point (if it exists).\\\\
+
+\underline{Second Derivative Test}\\
+The second derivative test finds local max., min., and saddle points.\\
+A critical point of $f(x,y)$ is needed, as is the discriminant of $f(x,y)$ which is:
+$$
+D(a,b) = \begin{bmatrix}
+ f_{xx}(a,b) & f_{xy}(a,b)\\
+  f_{yx}(a,b) & f_{yy}(a,b)\\
+\end{bmatrix}
+$$
+which yields
+$$
+D(a,b) = f_{xx}(a,b) f_{yy}(a,b) - f_{xy}^2(a,b)
+$$
+Then, the second derivative test's rules are:\\\\
+ $p = (a,b)$ is a \emph{critical point} of $f(x,y)$.\\
+1. If $D > 0$ and $f_{xx}(a,b) > 0$, then $f(a,b)$ is a local minimum.\\
+2. If $D > 0$ and $f_{xx}(a,b) < 0$, then $f(a,b)$ is a local maximum.\\
+3. If $D < 0$, then $f$ has a saddle point at $(a,b)$.\\
+4. If $D = 0$, then the test is inconclusive.\\
+
+\underline{Global Extrema}\\
+Let $f(x,y)$ be defined over a closed domain $D$. Then,\\\\
+$f$'s extreme values occur at either critical points in the interior of $D$, or\\
+at points on the boundary of $D$.\\\\
+First, find and examine critical points. Then, evaluate $f$ at the boundaries of $D$.\\
+Compare these points to find $f_{max}$ and $f_{min}$.\\
+
+\underline{Lagrange Multipliers}\\
+Lagrange multipliers are used to find the min. and max. of a function under a given constraint. Typically, it will look like:\\\\
+Given function $f(x,y)$, find the min. and max. under the constraint $g(x,y)$.\\
+\indent
+($g$ might make a line or other geometric shape; this shape slices $f$. We then need to find the max./min. of $f$ in this slice.)\\\\
+
+The Lagrange condition is:
+$$
+\nabla f = \lambda \nabla g
+$$
+Then, solve for $\lambda$ in terms of $x$ and $y$. This might look like:
+$$
+\lambda = m \ x, \ \lambda = n \ y
+$$
+(Taking $m$ and $n$ to represent some expressions).\\\\
+
+Then, let these two $\lambda$ expressions equal each other and solve for $x$ and $y$:\\
+$$
+m \ x = n \ y
+$$
+This new $x$ and $y$ is the crit. point.\\
+Sub. the newly found $x$ and $y$ into constraint $g$
 
 \end{document}
 This is never printed

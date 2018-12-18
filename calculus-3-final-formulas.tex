@@ -1,0 +1,157 @@
+\title{Calculus 3, Final Formulas}
+
+\documentclass[10pt]{article}
+
+\usepackage[top=.3in, bottom=.75in, left=1in, right=1in]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+
+\begin{document}
+\maketitle
+
+\section*{Vector Operations/Identities}
+\noindent
+$
+v \cdot w = ||v|| \ ||w|| \ cos\theta
+$\\
+$
+v \cdot v = ||v||^2
+$\\
+\noindent
+$
+v \perp w \Leftrightarrow v \cdot w = 0
+$\\
+\underline{Unit vector:} \ $e_u = \frac{u}{||u||}$\\
+\underline{Projection of $u$ along $v$:}
+$u_{||v} = \left(\frac{u\cdot v}{v \cdot v}\right) v = \left(\frac{u\cdot v}{||v||^2}\right)v = \left(\frac{u\cdot v}{||v||}\right)e_v$\\
+\underline{Component of $u$ along $v$:} \ $\frac{u \cdot v}{||v||} = ||u|| \ cos\theta$\\	
+\noindent
+\underline{$u$ perpendicular to $v$:} \ $u_{\perp v} = u - u_{||v}$\\
+\underline{Decomposition of vector $u$ with respect to $v$ (derived from above):} \ $u = u_{\perp v} + u_{||v}$\\
+
+\noindent
+\underline{Cross product of $v$ and $w$:}\\\\
+$
+v \times w = \begin{pmatrix}  i&j&k\\v_1&v_2&v_3\\w_1&w_2&w_3\end{pmatrix}
+=  \begin{pmatrix}  v_2&v_3\\w_2&w_3 \end{pmatrix}i
+-\begin{pmatrix}  v_1&v_3\\w_1&w_3 \end{pmatrix}j
++\begin{pmatrix}  v_1&v_2\\w_1&w_2 \end{pmatrix}k
+$\\
+\indent
+
+
+\noindent
+$(v \times w) \perp v$ and $(v \times w) \perp w$\\
+$||v \times w|| = ||v|| \ ||w|| \ sin \theta$\\
+Area of parallelogram spanned by $v$ and $w$ = $||v \times w||$\\
+\section*{Lines and Planes in Space}
+\noindent
+\underline{Equation of a line:}\\\\
+A line through $p_0 = (x_0,y_0,z_0)$ in the direction of $v = <a,b,c>$:\\
+$
+r(t) = r_0 + t \ v \ =  \ <x_0,y_0,z_0> + \ t <a,b,c>\\
+$\\
+\underline{Parametric equations for line (derived from above):}\\
+$x(t) = x_0 + at$\\
+$y(t) = y_0 + bt$ \\
+$z(t) = z_0 + ct$\\
+
+
+\noindent
+\underline{Equation of a plane:}\\
+\underline{Vector form:}\\
+$n \cdot <x,y,z> \ = \ d$\\
+\noindent
+\underline{Scalar form:}\\
+$a(x-x_0) + b(y-y_0) + c(z-z_0) \ = \ 0$\\
+or $ax+by+cz = d$ where $d = ax_0 + by_0 + cz_0$.\\
+\noindent
+\underline{Arc length:}\\
+$
+s(t) = \int_0^T ||r'(t)|| \ dt
+$\\
+\noindent
+\underline{Speed:}\\
+$
+\frac{d}{dt}s(t) = ||r'(t)||
+$\\
+
+\clearpage
+\underline{Tangent plane:}\\
+For $z = f(x,y)$:\\
+tangent plane at $(x_0,y_0)$: $f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$\\
+
+\section*{Gradients, Directional Derivatives}
+\underline{Chain Rule (Alternate Method and Multivariate Method):}\\
+Given $y= f(x)$, $x= g(t)$, then $y = f(x) = f( \ g(t) \ )$ and $\frac{dy}{dt} = \frac{dy}{dx} \frac{dx}{dt}$.
+The following is then true:\\
+Given $z = f(x,y)$, where $x= g(t)$, $y= h(t)$, $z = f(x,y) = f( \ g(t), h(t) \ )$\\
+and $\frac{dz}{dt} = \frac{\partial{f}}{\partial{x}} \frac{dx}{dt} \ + \ \frac{\partial{f}}{\partial{y}} \frac{dy}{dt}$.\\
+
+\noindent
+\underline{Gradient:} Given $f(x,y)$, the gradient of $f$ is $\nabla f = \left(\frac{\partial{f}}{\partial{x}},\frac{\partial{f}}{\partial{y}}\right)$.\\
+
+\noindent
+\underline{Directional Derivative:}\\
+In the direction of unit vector $\vec{u}=<a,b>$: \ ${D_{\vec u}}f\left( {x,y} \right) = {f_x}\left( {x,y} \right)a + {f_y}\left( {x,y} \right)b$.\\
+
+In three variables: \ ${D_{\vec u}}f\left( {x,y,z} \right) = {f_x}\left( {x,y,z} \right)a + {f_y}\left( {x,y,z} \right)b + {f_z}\left( {x,y,z} \right)c$.\\
+\emph{or} in a simpler form:\\
+Given $f(x,y)$, the directional derivative of $f$ at $p = (a,b)$ in the direction of unit vector $\vec{u}$ is
+
+$$
+{D_{\vec u}}f\left( {p} \right) = {D_{\vec u}}f\left( {a,b} \right) = \nabla f(a,b) \cdot \vec{u}
+$$
+
+Rate of change of a function $f$ in the direction of $\nabla f(p)$:\\$||\nabla f(p)||$.
+
+Rate of change of a function $f$ in the direction of a unit vector $\vec{u}$ making an angle $\theta$ with $\nabla f(p)$:\\
+$$
+\nabla f(p) \cdot \vec{u} = ||\nabla f(p)|| \ ||\vec{u}|| \ \cos \theta
+$$
+(This comes from the following identity):$\vec{u} \cdot \vec{v} = ||u|| \ ||v|| \ \cos \theta$.
+
+\section*{Optimization}
+\underline{Critical points}\\
+A point $p = (a,b)$ in the domain of $f$ is a \emph{critical point} if:\\
+$f_x(a,b) = 0$ or $f_x(a,b)$ does not exist, and\\
+$f_y(a,b) = 0$ or $f_y(a,b)$ does not exist.\\
+
+Solving the system of $f_x = 0$, $f_y = 0$ will find the critical point (if it exists).\\
+
+\underline{Second Derivative Test}\\
+The second derivative test finds local max., min., and saddle points.\\
+A critical point of $f(x,y)$ is needed, as is the discriminant of $f(x,y)$ which is:
+$$
+D(a,b) = \begin{bmatrix}
+ f_{xx}(a,b) & f_{xy}(a,b)\\
+  f_{yx}(a,b) & f_{yy}(a,b)\\
+\end{bmatrix}
+$$
+which yields
+$$
+D(a,b) = f_{xx}(a,b) f_{yy}(a,b) - f_{xy}^2(a,b)
+$$
+Then, the second derivative test's rules are:\\\\
+ $p = (a,b)$ is a \emph{critical point} of $f(x,y)$.\\
+1. If $D > 0$ and $f_{xx}(a,b) > 0$, then $f(a,b)$ is a local minimum.\\
+2. If $D > 0$ and $f_{xx}(a,b) < 0$, then $f(a,b)$ is a local maximum.\\
+3. If $D < 0$, then $f$ has a saddle point at $(a,b)$.\\
+4. If $D = 0$, then the test is inconclusive.\\
+
+\underline{Global Extrema}\\
+Let $f(x,y)$ be defined over a closed domain $D$. Then, $f$'s extreme values occur at either critical points in the interior of $D$, or at points on the boundary of $D$.\\
+First, find and examine critical points. Then, evaluate $f$ at the boundaries of $D$. Compare these points to find $f_{max}$ and $f_{min}$.\\
+
+\underline{Lagrange Multipliers}\\
+The Lagrange condition is: \ $\nabla f = \lambda \nabla g$.\\
+Then, solve for $\lambda$ in terms of $x$ and $y$: \ $\lambda = m \ x, \ \lambda = n \ y$.
+(Taking $m$ and $n$ to represent some expressions).\\
+Then, let these two $\lambda$ expressions equal each other and solve for $x$ and $y$: \ $m \ x = n \ y$.\\
+This new $x$ and $y$ is the crit. point. Sub. the newly found $x$ and $y$ into constraint $g$ to find max. and min. of $f$.\\
+
+\end{document}
+This is never printed
